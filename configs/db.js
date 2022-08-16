@@ -1,11 +1,14 @@
 const mongoose = require("mongoose")
+require('dotenv').config()
+
+const mongodburl = process.env.MongoDb
+
 
 const connect = () => {
-    return mongoose.connect(`mongodb+srv://ritik:8505805813@cluster0.w0p4q.mongodb.net/notekeeper?authSource=admin&replicaSet=atlas-11mzy7-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true`, {
+    return mongoose.connect(mongodburl, {
         useNewUrlParser: true,
     })
-
-
 }
+
 
 module.exports= connect
